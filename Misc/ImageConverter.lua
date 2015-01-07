@@ -19,7 +19,9 @@ function NewCommand(Name,Desc,Context,Calls,Func)
 	Core.Commands[Name]={Name=Name,Desc=Desc,Context=Context,Calls=Calls,Function=Func}
 end;
 
-NewCommand("Generate Image","Using a link it generates an image",0,{})
+NewCommand("Generate Image","Using a link it generates an image",0,{'img','gi','generate','genim'},function(Msg,Speaker)
+	--Unfinished!
+end)
 
 function OnChatted(Msg,Player)
 	if not Msg or type(Msg) ~= "string" then return end
