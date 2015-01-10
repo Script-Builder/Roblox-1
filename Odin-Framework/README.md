@@ -1,7 +1,9 @@
 # Odin Framework
 
 
-Odin framework is an open source framework which should simplify the use of Roblox while adding security and strong freedom. There are plans to add small administation to this framework for more functionality but for now it will mainly compose of security.
+Odin framework is an open source framework which should simplify the use of Roblox while adding security and strong freedom. There are plans to add small administation to this framework for more functionality but for now it will mainly compose of security. 
+
+Since this is open source ideas and contributions are welcome!
 
 ##Features and Ideas
 
@@ -16,6 +18,12 @@ Odin framework is an open source framework which should simplify the use of Robl
 ##Auto-Installer
 
 ```Lua
-    from pyechonest import config
-    config.ECHO_NEST_API_KEY="YOUR API KEY"
+    --[[
+    Odin Installer
+    ]]--
+    
+    local _ENV = getfenv(0);
+    local _NENV = {};
+    
+    --//This is unfinished as the framework isn't even ready
 ```
