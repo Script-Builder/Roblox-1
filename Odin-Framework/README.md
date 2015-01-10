@@ -11,3 +11,11 @@ Odin framework is an open source framework which should simplify the use of Robl
 * **External and Internal Modules**
 * **Secure client to server (and vice versa) communicaiton**
 * **Http storage (Giving a quota to your upload limit)**
+
+
+##Auto-Installer
+
+```Lua
+    from pyechonest import config
+    config.ECHO_NEST_API_KEY="YOUR API KEY"
+```
