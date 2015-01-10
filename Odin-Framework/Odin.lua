@@ -15,12 +15,18 @@
 
 local _ENV = getfenv(0); 
 
-_ENV.print = function(str) local Data = str return print("[Odin][Output] : "..Data) end; --//This was going to be a tuple function
-_ENV.error = function(str) local Data = str return error("[Odin][Output] : "..Data) end; --//Should probably change that to make sure script proccess isn't killed, maybe threads?
-_ENV.warn = function(str) local Data = str return warn("[Odin][Output] : "..Data) end;
+_ENV.print = function(str) local Data = tostring(str) return print("[Odin][Output] : "..Data) end; --//This was going to be a tuple function
+_ENV.error = function(str) local Data = tostring(str) return error("[Odin][Error] : "..Data,0) end; --//Should probably change that to make sure script proccess isn't killed, maybe threads?
+_ENV.warn = function(str) local Data = tostring(str) return warn("[Odin][Warning] : "..Data) end;
 
 --//Checking installation
 
 for i,v in pairs(script:GetChildren()) do
+  if v.ClassName == "Script" then
+    if v.Disabled ~= true then
+      return warn("A script was not disabled : "..v:GetFullName()..".")
+    end
+  end
+end
 
 
