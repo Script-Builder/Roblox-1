@@ -25,6 +25,7 @@ Settings.Debug=true;
 --//Check 
 local Database=Instance.new("Configuration",script);
 local ClientFolder=script.Clients;
+local ScriptModules=script.ScriptModules
 local ServerFolder=script.ServerFolder;
 local Connections=script.Connections
 local ClientConnection=Connections.ServerConnections;
