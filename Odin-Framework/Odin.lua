@@ -41,6 +41,4 @@ function Debug(...)
 end;
 
 --//Load Libraries
-local Include=ScriptModules.IncludeAPI;
-
-Debug("asd");
+local Include=require(ScriptModules.IncludeAPI);
