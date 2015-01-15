@@ -13,20 +13,30 @@
   Just place this file in ServerScriptService, or any other place you wish to store it.
 ]]--
 
-local _ENV = getfenv(0); 
+local Odin={};
+local _ENV=getfenv(0);
 
-_ENV.print = function(str) local Data = tostring(str) return print("[Odin][Output] : "..Data) end; --//This was going to be a tuple function
-_ENV.error = function(str) local Data = tostring(str) return error("[Odin][Error] : "..Data,0) end; --//Should probably change that to make sure script proccess isn't killed, maybe threads?
-_ENV.warn = function(str) local Data = tostring(str) return warn("[Odin][Warning] : "..Data) end;
+--//Pre-Header Settings
+Odin.Settings={};
+local Settings=Odin.Settings;
 
---//Checking installation
+Settings.Debug=true;
 
-for i,v in pairs(script:GetChildren()) do
-  if v.ClassName == "Script" then
-    if v.Disabled ~= true then
-      return warn("A script was not disabled : "..v:GetFullName()..".")
-    end
+--//Check 
+local Database=Instance.new("Configuration",script);
+local ClientFolder=script.Clients;
+local ServerFolder=script.ServerFolder;
+local Connections=script.Connections
+local ClientConnection=Connections.ServerConnections;
+local ServerConnection=Connections.ClientConnections;
+local Buffer=script.BufferFolder;
+--//Pre-Load Debug Function
+function Debug(...)
+  local Data={...};
+  for d,t in pairs(Data) do
+    return print("[Odin Framework] "..t);
   end
-end
+end;
 
+--//Lol BRB SHOWER
 
