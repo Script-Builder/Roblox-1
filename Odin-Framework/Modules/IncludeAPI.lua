@@ -12,5 +12,12 @@
 local API={};
 
 function API:IncludeFile(File)
+  if type(File) == "string" then
+    if not script.ScriptModules:FindFirstChild(tostring(File)) then return print("[Odin Framework] "..tostring(File).." could not be loaded. Details : Was not found in ScriptModules Folder!") end;
+    if script.ScriptModules:FindFirstChild(tostring(File)) then
+      return require(tostring(File))
+    end
+  end;
+end;
 
-end
+return API
