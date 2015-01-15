@@ -24,7 +24,8 @@ Settings.Debug=true;
 
 --//Check 
 local Database=Instance.new("Configuration",script);
-local ClientFolder=script.Clients;
+local Clients=script.Clients;
+local ClientFolder=script.ClientScripts;
 local ScriptModules=script.ScriptModules
 local ServerFolder=script.ServerFolder;
 local Connections=script.Connections
@@ -39,5 +40,7 @@ function Debug(...)
   end
 end;
 
---//Lol BRB SHOWER
+--//Load Libraries
+local Include=ScriptModules.IncludeAPI;
 
+Debug("asd");
