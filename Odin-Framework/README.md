@@ -1,5 +1,6 @@
 # Odin Framework
 
+**Now used on Don't Starve Together! : http://www.roblox.com/PlaceItem.aspx?id=199578410&seoname=Dont-Starve-Together-Beta**
 
 Odin framework is an open source framework which should simplify the use of Roblox while adding security and strong freedom. There are plans to add small administation to this framework for more functionality but for now it will mainly compose of security. 
 
