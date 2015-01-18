@@ -45,15 +45,15 @@ end
 		local _END = 0
 		for i,v in pairs(_UKEY) do
 			for _CHAR = 1,v:len(),1 do
-				local by = v:sub(_CHAR,_CHAR):byte()
-				if _CHAR % 2 == 0 then
-					_END = _END * tonumber(by)
-				else
-					_END = _END / tonumber(by)
+				_END = _END + v:sub(_CHAR,_CHAR):byte() + _CHAR
+				if _END % 10 == 0 then
+					_END = math.sqrt(_END)
+				elseif _END % 4 == 0 then
+					_END = _END / 2
 				end
 			end
 		end
-		return _END
+		return math.floor(_END)
 	end)()
 	local randkstr = #Key+math.floor(math.pow((0xFF*0xEE),2))+UKeyN
 	for i = 1,Key:len(),1 do
@@ -82,27 +82,27 @@ local function Module.Encrypt(Text,Key)
 		local _END = 0
 		for i,v in pairs(_UKEY) do
 			for _CHAR = 1,v:len(),1 do
-				local by = v:sub(_CHAR,_CHAR):byte()
-				if _CHAR % 2 == 0 then
-					_END = _END * tonumber(by)
-				else
-					_END = _END / tonumber(by)
+				_END = _END + v:sub(_CHAR,_CHAR):byte() + _CHAR
+				if _END % 10 == 0 then
+					_END = math.sqrt(_END)
+				elseif _END % 4 == 0 then
+					_END = _END / 2
 				end
 			end
 		end
-		return _END
+		return math.floor(_END)
 	end)()
 	local randomk = #Key+math.floor(math.pow((0xFF*0xEE),2))+UKeyN
 	for i = 1,Key:len(),1 do
- 		randomk=randomk+math.pow(tonumber(Key:sub(i,i):byte()),2)*2
+	 	randomk=randomk+math.pow(tonumber(Key:sub(i,i):byte()),2)*2
 	end
-    local retn = ""
-    for i = 1,Text:len() do
-          local byt = Text:sub(i,i):byte()
-          byt = byt + randomk
-          byt = tostring(byt)
-          retn = retn .. byt .. "/"
-    end
-    retn = tostring(binencode(retn,8)):gsub("[10]",{["1"] = "_"; ["0"] = "?";})
-    return retn
+	local retn = ""
+	for i = 1,Text:len() do
+		local byt = Text:sub(i,i):byte()
+		byt = byt + randomk
+		byt = tostring(byt)
+		retn = retn .. byt .. "/"
+	end
+	retn = tostring(binencode(retn,8)):gsub("[10]",{["1"] = "_"; ["0"] = "?";})
+	return retn
 end
