@@ -106,3 +106,5 @@ local function Module.Encrypt(Text,Key)
 	retn = tostring(binencode(retn,8)):gsub("[10]",{["1"] = "_"; ["0"] = "?";})
 	return retn
 end
+
+return Module
