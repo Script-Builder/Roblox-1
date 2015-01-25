@@ -12,7 +12,7 @@ Since this is open source ideas and contributions are welcome!
 * **Encryption with serializer**
 * **Administation Module**
 * **External and Internal Modules**
-* **Secure client to server (and vice versa) communicaiton**
+* **Secure client to server (and vice versa) communication**
 * **Http storage (Giving a quota to your upload limit)**
 
 
